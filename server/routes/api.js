@@ -40,7 +40,7 @@ router.post('/city', function (req, res) {
   )
   c.save()
     .then(function (city) {
-      req.send(city, "added")
+      res.send(city)
     })
 })
 
