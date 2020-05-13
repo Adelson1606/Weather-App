@@ -8,9 +8,23 @@
 </head>
 
 <body>
-  <button>Hello</button>
+  <script id="main" type="text/x-handlebars-template">
+{{#each allCityData}}
+    <div>
+      <div class="cityName">{{name}}</div>
+      <div class='temperature'>{{temperature}}</div>
+      <div class='conditions'>{{conditions}}</div>
+      <div><img src={{conditionPic}}></div>
+    </div>       
+{{/each}}
+  </script>
+
+  <div class='main-container'></div>
+  <script src="/handlebars/dist/handlebars.js"></script>
   <script src="/jquery/dist/jquery.js"></script>
   <script src="TempMenager.js"></script>
+  <script src="Renderer.js"></script>
+  <script src="main/js"></script>
 
 </body>
 

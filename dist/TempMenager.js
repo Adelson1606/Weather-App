@@ -1,4 +1,3 @@
-
 class TempManager {
   constructor () {
     this.cityData = []
@@ -44,9 +43,3 @@ class TempManager {
     this.cityData.splice(indexOfCity, 1)
   }
 }
-const temp = new TempManager()
-async function blabla () {
-
-}
-
-blabla()
