@@ -46,8 +46,6 @@ class TempManager {
 }
 const temp = new TempManager()
 async function blabla () {
- 
-  await temp.removeCity("Irkutsk")
 
 }
 
