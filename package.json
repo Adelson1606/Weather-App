@@ -1,0 +1,32 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "FullStackProj",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adelson1606/Weather-App.git"
+  },
+  "author": "VeronikaAdelson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Adelson1606/Weather-App/issues"
+  },
+  "homepage": "https://github.com/Adelson1606/Weather-App#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "font-awesome": "^4.7.0",
+    "handlebars": "^4.7.6",
+    "jquery": "^3.5.1",
+    "moment": "^2.25.3",
+    "mongoose": "^5.9.13",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5",
+    "urllib": "^2.34.2"
+  }
+}
