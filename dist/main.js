@@ -1,0 +1,1 @@
+const tempMenager = new TempManager()
