@@ -1,24 +1,28 @@
 const express = require('express')
 const router = express.Router()
-//const moment = require('moment')
 const request = require('axios')
 
 const City = require('../models/City')
 
 router.get('/city/:cityName', async function (req, res) {
   const city = req.params.cityName.toLocaleLowerCase()
-  const data = await request(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=d98539d8bfaec863c4dbb2f0d8f3dc40`)
+  const data = await request(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=d98539d8bfaec863c4dbb2f0d8f3dc40&units=metric`)
     .catch(function (err) {
       console.error(err)
-      res.send('ERROR ERROR ERROR!')  
     })
+
+  if (!data) {
+    res.status(404).end()
+    return
+  }
+  
   const results = data.data
   const weatherInCity = {
     name: results.name,
     country: results.sys.country,
-    description: results.weather[0].description,
-    temp: results.main.temp,
-    pic: results.weather[0].icon
+    condition: results.weather[0].description,
+    temperature: Math.floor(results.main.temp),
+    conditionPic: results.weather[0].icon
   }
   res.send(weatherInCity)
 })
@@ -33,9 +37,9 @@ router.post('/city', function (req, res) {
   const c = new City(
     {
       name: newCity.name,
-      temperature: newCity.temp,
-      condition: newCity.description,
-      conditionPic: newCity.pic
+      temperature: newCity.temperature,
+      condition: newCity.condition,
+      conditionPic: newCity.conditionPic
     }
   )
   c.save()
