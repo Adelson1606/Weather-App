@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, 'node_modules')))
 
 // Mongoose setup
 const mongoose = require('mongoose')
-mongoose.connect(mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost/weaterDB', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/weaterDB', { useNewUrlParser: true })
 
 app.use('/', api)
 
