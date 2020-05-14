@@ -1,40 +1,38 @@
 class TempManager {
   constructor () {
     this.cityData = []
+
+    this.searchedCity = null
   }
 
-  getDataFromDB () {
-    $.ajax({
-      url: '/cities',
-      type: "GET",
-      dataType: 'json'
-    })
-      .done(data => {
-        this.cityData = data
-      })
+  async getDataFromDB () {
+    const oldData = await $.get('/cities') 
+    this.cityData = oldData
   }
     
   async getCityData (cityName) {
-    const data = await $.ajax({
-      url: `/city/${cityName}`,
-      type: "GET",
-      dataType: 'json'
-    })
-    this.cityData.push(data)
+    const data = await $.get(`/city/${cityName}`)
+    const alreadyExists = this.cityData.find(c => c.name.toUpperCase() === cityName.toUpperCase())
+
+    if (alreadyExists) {
+      return
+    }
+
+    this.searchedCity = data
+    this.cityData.unshift(this.searchedCity)
+
   }
 
   async saveCity (cityName) {
-    const cityFromArray = this.cityData.find(c => c.name === cityName)
-    const data = await $.ajax({
-      url: `/city`,
-      type: "POST",
-      dataType: 'json',
-      data: cityFromArray
-    })
+    const cityFromArray = this.cityData.find(c => c.name.toUpperCase() === cityName.toUpperCase())
+    const data = await $.post(`/city`, this.cityData[0])
+    const cityIndex = this.cityData.indexOf(cityFromArray)
+    this.cityData.splice(cityIndex, 1)
+    this.cityData.unshift(data)
   }
 
   async removeCity (cityName) {
-    const deleteCity = await $.ajax({
+    const deleteCity = $.ajax({
       url: `/city/${cityName}`,
       type: "DELETE",
       dataType: 'json'
@@ -42,4 +40,6 @@ class TempManager {
     const indexOfCity = this.cityData.findIndex(c => c.name === cityName)
     this.cityData.splice(indexOfCity, 1)
   }
+
+
 }

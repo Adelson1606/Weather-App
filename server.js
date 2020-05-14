@@ -4,7 +4,6 @@ const path = require('path')
 const api = require('./server/routes/api')
 
 const app = express()
-const City = require('./server/models/City')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
