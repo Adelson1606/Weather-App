@@ -19,7 +19,10 @@
 {{#each allCityData}}
     <div class="city-container">
       {{#if _id}}
-        <div class='remove'><i class="fas fa-minus-circle"></i></div>
+        <div class='remove'>
+          <i class="fas fa-minus-circle"></i>
+          <i class="fas fa-sync-alt"></i>
+        </div>
       {{else}}
         <div class='save'><i class="fas fa-plus-circle"></i></div>
       {{/if}}

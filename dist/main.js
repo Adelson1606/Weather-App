@@ -26,11 +26,19 @@ $('.main-container').on('click', '.save', async function () {
   renderer.renderData(tempMenager.cityData)
 })
 
-$('.main-container').on('click', '.remove', function () {
+$('.main-container').on('click', '.fa-minus-circle', function () {
   const cityName = $(this).closest(".city-container").find('.name').text()
   tempMenager.removeCity(cityName)
   renderer.renderData(tempMenager.cityData)
 })
+
+$('.main-container').on('click', '.fa-sync-alt', function () {
+  const cityName = $(this).closest(".city-container").find('.name').text()
+  tempMenager.updateCity(cityName)
+  renderer.renderData(tempMenager.cityData)
+  loadPage()
+})
+
 
 
 loadPage()

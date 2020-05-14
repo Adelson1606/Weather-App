@@ -31,7 +31,7 @@ class TempManager {
     this.cityData.unshift(data)
   }
 
-  async removeCity (cityName) {
+  removeCity (cityName) {
     const deleteCity = $.ajax({
       url: `/city/${cityName}`,
       type: "DELETE",
@@ -41,5 +41,15 @@ class TempManager {
     this.cityData.splice(indexOfCity, 1)
   }
 
+  async updateCity (cityName) {
+    const newData = await $.ajax({
+      url: `/city/${cityName}`,
+      type: 'PUT',
+      dataType: 'json'
+    })
+    const indexOfCity = this.cityData.findIndex(c => c.name === cityName)
+    this.cityData.splice(indexOfCity, 1)
+    this.cityData.push(newData)
+  }
 
 }

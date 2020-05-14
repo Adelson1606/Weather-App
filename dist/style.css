@@ -91,7 +91,7 @@ input#city-input {}
   justify-self: center;
   margin-bottom: 5%;
   width: 100%;
-  padding:;
+  padding: ;
 }
 
 .remove {
@@ -137,9 +137,15 @@ input#city-input {
   .temperature {
     font-size: 30px;
   }
-  .img{
-  size:;
+  .img {
+    size: ;
   }
 }
 
-::before {}
+
+
+i.fas.fa-sync-alt {
+  color: white;
+  font-size: 25px;
+    content: "\f2f1";
+}
