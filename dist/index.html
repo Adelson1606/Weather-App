@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&family=Viga&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a0cb0e4c16.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Nika-weather</title>
+</head>
+
+<body>
+  <form class="search" autocomplete="off">
+    <input id='city-input' placeholder="Write Your City">
+    <button id='search'><i class="fas fa-search"></i></button>
+  </form>
+  <script id="main" type="text/x-handlebars-template">
+{{#each allCityData}}
+    <div class="city-container">
+      {{#if _id}}
+        <div class='remove'>
+          <i class="fas fa-minus-circle"></i>
+          <i class="fas fa-sync-alt"></i>
+        </div>
+      {{else}}
+        <div class='save'><i class="fas fa-plus-circle"></i></div>
+      {{/if}}
+      <div class='temperature'>{{temperature}} &#8451</div>
+      <div class='img'><img src='http://openweathermap.org/img/wn/{{conditionPic}}@2x.png'></div>
+      <div>  </div>
+      <div class="cityName"> 
+        <div class="name">{{name}}</div>
+       </div>
+      <div class='conditions'>{{condition}}</div> 
+    </div>       
+{{/each}}
+  </script>
+
+  <div class='main-container'>
+  </div>
+  <!-- 
+
+  <div class='save'><i class="fas fa-plus-circle"></i></div>
+  <div class='temperature'>{{temperature}} &#8451</div>
+  <div class='img'><img src='http://openweathermap.org/img/wn/{{conditionPic}}@2x.png'></div>
+  <div class='remove'><i class="fas fa-minus-circle"></i></div>
+  <div class="cityName">
+    <div class="name">{{name}}</div>
+  </div>
+  <div class='conditions'>{{condition}}</div>
+ -->
+
+  <script src="/handlebars/dist/handlebars.js"></script>
+  <script src="/jquery/dist/jquery.js"></script>
+  <script src="TempMenager.js"></script>
+  <script src="Renderer.js"></script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>

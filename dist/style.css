@@ -1,0 +1,151 @@
+body {
+  background-image: url("https://images.pexels.com/photos/2310713/pexels-photo-2310713.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  font-family: 'Open Sans', sans-serif;
+  /* filter: blur(9px); */
+  background-size: inherit;
+  /* width: 100%; */
+  height: 100%;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.main-container {
+  display: grid;
+  grid-template-rows: 1fr;
+  /* justify-self: center; */
+  margin-top: 15px;
+}
+
+.cityName {
+  display: grid;
+  /* display: flex; */
+  justify-content: c;
+  justify-content: center;
+  align-items: center;
+  /* padding: 10vw; */
+}
+
+.temperature {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bolder;
+  color: w;
+  color: white;
+}
+
+.conditions {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+  color: white;
+}
+
+.save {
+  display: grid;
+  align-items: center;
+}
+
+i.fas.fa-plus-circle {
+  color: white;
+  font-size: 25px;
+}
+
+i.fas.fa-minus-circle {
+  color: white;
+  font-size: 25px;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+}
+
+.img {
+  display: grid;
+  justify-content: center;
+}
+
+.search {
+  display: flex;
+  grid-template-columns: 3fr 1fr;
+  height: 50px;
+  font-size: x-large;
+}
+
+input#city-input {}
+
+.city-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 3fr;
+  background-color: #374467ba;
+  justify-self: center;
+  margin-bottom: 5%;
+  width: 100%;
+  padding: ;
+}
+
+.remove {
+  display: grid;
+  align-items: center;
+}
+
+button#search {
+  font-family: 'Open Sans', sans-serif;
+}
+
+button#search {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f9f2f28a;
+  width: 100%;
+}
+
+button#search {}
+
+input#city-input {
+  font-size: x-large;
+  background-color: #ffffffd4;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 350px) {
+  .city-container {
+    display: block;
+  }
+  .search {
+    /* display: inline; */
+    display: inline-block;
+    font-size: medium;
+    height: 30px;
+    /* justify-self: center; */
+  }
+  .input#city-input {
+    font-size: medium;
+    color: violet;
+  }
+  .temperature {
+    font-size: 30px;
+  }
+  .img {
+    size: ;
+  }
+}
+
+
+
+i.fas.fa-sync-alt {
+  color: white;
+  font-size: 25px;
+    content: "\f2f1";
+}
