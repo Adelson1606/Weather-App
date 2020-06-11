@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/weaterDB', { us
 
 app.use('/', api)
 
-const port = 3000
-app.listen(process.env.PORT || port, function () {
+const port = process.env.PORT || 3000
+app.listen(port, function () {
   console.log(`WeatherApp running on port ${port}`)
 })
